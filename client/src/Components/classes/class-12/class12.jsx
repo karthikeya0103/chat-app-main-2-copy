@@ -21,7 +21,7 @@ function Class12() {
 
   axios.defaults.withCredentials=true;
   useEffect(()=>{
-    axios.get('http://localhost:8080/id')
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/id`)
     .then(result=>{
         if(result.data.valid){
           setAuth(true)
@@ -40,7 +40,7 @@ function Class12() {
 			order_id: data.id,
 			handler: async (response) => {
 				try {
-					const verifyUrl = "http://localhost:8080/api/payment/verify";
+					const verifyUrl = `${process.env.REACT_APP_BACKEND_URL}/api/payment/verify`;
 					const result = await axios.post(verifyUrl, response);
           navigate('/jee-test-series')
 					console.log(result);
@@ -61,7 +61,7 @@ function Class12() {
 		try {
       if(auth){
       setPrice(p)
-			const orderUrl = "http://localhost:8080/api/payment/orders";
+			const orderUrl = `${process.env.REACT_APP_BACKEND_URL}/api/payment/orders`;
 			const { data } = await axios.post(orderUrl, { amount: price });
 			console.log(data);
 			initPayment(data.data);

@@ -39,7 +39,7 @@ const CheckPasswordPage = () => {
     e.preventDefault()
     e.stopPropagation()
 
-    const URL = `${process.env.REACT_APP_BACKEND_URL}/api/password`
+    const URL = `http://localhost:8080/api/password`
 
     try {
         const response = await axios({
@@ -57,6 +57,7 @@ const CheckPasswordPage = () => {
         if(response.data.success){
             dispatch(setToken(response?.data?.token))
             localStorage.setItem('token',response?.data?.token)
+
 
             setData({
               password : "",

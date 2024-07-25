@@ -55,7 +55,7 @@ function Physics() {
 
   axios.defaults.withCredentials=true;
   useEffect(()=>{
-    axios.get('http://localhost:8080/id')
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/id`)
     .then(result=>{
         if(result.data.valid){
           setId(result.data.id)
@@ -75,10 +75,10 @@ function Physics() {
 			order_id: data.id,
 			handler: async (response) => {
 				try {
-					const verifyUrl = "http://localhost:8080/api/payment/verify";
+					const verifyUrl = `${process.env.REACT_APP_BACKEND_URL}/api/payment/verify`;
           console.log(verifyUrl)
 					const result = await axios.post(verifyUrl, response);
-          const result2 = await axios.post(`http://localhost:8080/api/mentors/assign-mentor/${id}`,{subjects:["maths","physics","chemistry","biology"]})
+          const result2 = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/mentors/assign-mentor/${id}`,{subjects:["maths","physics","chemistry","biology"]})
           navigate('/')
 					console.log(result);
 				} catch (error) {
@@ -96,7 +96,7 @@ function Physics() {
 	const handlePayment = async () => {
 		try {
       if(auth){
-        const orderUrl = "http://localhost:8080/api/payment/orders";
+        const orderUrl = `${process.env.REACT_APP_BACKEND_URL}/api/payment/orders`;
         const { data } = await axios.post(orderUrl, { amount: price });
         console.log(data);
         initPayment(data.data);

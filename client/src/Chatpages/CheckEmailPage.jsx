@@ -27,7 +27,8 @@ const CheckEmailPage = () => {
     e.preventDefault()
     e.stopPropagation()
 
-    const URL = `${process.env.REACT_APP_BACKEND_URL}/api/email`
+    const URL = `https://chat-app-main-2-copy-kpg8.onrender.com/api/email`
+    console.log(process.env.REACT_APP_BACKEND_URL)
 
     try {
         const response = await axios.post(URL,data)
@@ -38,6 +39,7 @@ const CheckEmailPage = () => {
             setData({
               email : "",
             })
+
             navigate('/password',{
               state : response?.data?.data
             })
