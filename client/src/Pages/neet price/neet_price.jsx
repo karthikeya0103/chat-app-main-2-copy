@@ -48,7 +48,7 @@ function NeetPrice() {
 			order_id: data.id,
 			handler: async (response) => {
 				try {
-					const verifyUrl = `${process.env.REACT_APP_BACKEND_URL}/api/payment/verify`;
+					const verifyUrl = `https://chat-app-main-2-copy-kpg8.onrender.com/api/payment/verify`;
 					const result = await axios.post(verifyUrl, response);
           navigate('/neet-all-india-test-series')
 					console.log(result);
@@ -66,7 +66,7 @@ function NeetPrice() {
 
 	const handlePayment = async () => {
 		try {
-			const orderUrl = `${process.env.REACT_APP_BACKEND_URL}/api/payment/orders`;
+			const orderUrl = `https://chat-app-main-2-copy-kpg8.onrender.com/api/payment/orders`;
 			const { data } = await axios.post(orderUrl, { amount: price });
 			console.log(data);
 			initPayment(data.data);

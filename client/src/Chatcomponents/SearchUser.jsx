@@ -22,7 +22,7 @@ const SearchUser = ({ onClose }) => {
     // const userType = "mentor"
 
     const fetchInitialData = async () => {
-        const URL = `${process.env.REACT_APP_BACKEND_URL}/api/search-user`;
+        const URL = `https://chat-app-main-2-copy-kpg8.onrender.com/api/search-user`;
         try {
             setLoading(true);
             const response = await axios.post(URL, {
@@ -45,7 +45,7 @@ const SearchUser = ({ onClose }) => {
             return;
         }
 
-        const URL = `${process.env.REACT_APP_BACKEND_URL}/api/search-user`;
+        const URL = `https://chat-app-main-2-copy-kpg8.onrender.com/api/search-user`;
         try {
             setLoading(true);
             const response = await axios.post(URL, {

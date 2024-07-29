@@ -50,7 +50,7 @@
 //     e.preventDefault()
 //     e.stopPropagation()
 
-//     const URL = `${process.env.REACT_APP_BACKEND_URL}/api/student_register`
+//     const URL = `https://chat-app-main-2-copy-kpg8.onrender.com/api/student_register`
 
 //     try {
 //         const response = await axios.post(URL,data)
@@ -237,8 +237,8 @@
 //     e.stopPropagation();
 
 //     const URL = isMentor
-//       ? `${process.env.REACT_APP_BACKEND_URL}/api/mentor_register`
-//       : `${process.env.REACT_APP_BACKEND_URL}/api/student_register`;
+//       ? `https://chat-app-main-2-copy-kpg8.onrender.com/api/mentor_register`
+//       : `https://chat-app-main-2-copy-kpg8.onrender.com/api/student_register`;
 
 //     try {
 //       const response = await axios.post(URL, data);
@@ -483,7 +483,7 @@ const RegisterPage = () => {
 			order_id: data.id,
 			handler: async (response) => {
 				try {
-					const verifyUrl = `${process.env.REACT_APP_BACKEND_URL}/api/payment/verify`;
+					const verifyUrl = `https://chat-app-main-2-copy-kpg8.onrender.com/api/payment/verify`;
           console.log(verifyUrl)
 					const result = await axios.post(verifyUrl, response);
           navigate('/email');
@@ -505,13 +505,13 @@ const RegisterPage = () => {
     e.stopPropagation();
 
     const URL = isMentor
-      ? `${process.env.REACT_APP_BACKEND_URL}/api/mentor_register`
-      : `${process.env.REACT_APP_BACKEND_URL}/api/student_register`;
+      ? `https://chat-app-main-2-copy-kpg8.onrender.com/api/mentor_register`
+      : `https://chat-app-main-2-copy-kpg8.onrender.com/api/student_register`;
 
     try {
 
       if(!isMentor){
-        const orderUrl = `${process.env.REACT_APP_BACKEND_URL}/api/payment/orders`;
+        const orderUrl = `https://chat-app-main-2-copy-kpg8.onrender.com/api/payment/orders`;
         const { data } = await axios.post(orderUrl, { amount: price });
         console.log(data);
         initPayment(data.data);

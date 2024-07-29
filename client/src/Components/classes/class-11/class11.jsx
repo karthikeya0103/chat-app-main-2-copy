@@ -21,7 +21,7 @@ function Class11() {
 
   axios.defaults.withCredentials=true;
   useEffect(()=>{
-    axios.get(`${process.env.REACT_APP_BACKEND_URL}/id`)
+    axios.get(`https://chat-app-main-2-copy-kpg8.onrender.com/id`)
     .then(result=>{
         if(result.data.valid){
           setAuth(true)
@@ -40,7 +40,7 @@ function Class11() {
 			order_id: data.id,
 			handler: async (response) => {
 				try {
-					const verifyUrl = `${process.env.REACT_APP_BACKEND_URL}/api/payment/verify`;
+					const verifyUrl = `https://chat-app-main-2-copy-kpg8.onrender.com/api/payment/verify`;
 					const result = await axios.post(verifyUrl, response);
           console.log(result);
           navigate('/')
@@ -61,7 +61,7 @@ function Class11() {
 		try {
       if(auth){
       setPrice(p)
-			const orderUrl = `${process.env.REACT_APP_BACKEND_URL}/api/payment/orders`;
+			const orderUrl = `https://chat-app-main-2-copy-kpg8.onrender.com/api/payment/orders`;
 			const { data } = await axios.post(orderUrl, { amount: price });
 			console.log(data);
 			initPayment(data.data);

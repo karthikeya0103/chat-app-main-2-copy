@@ -39,7 +39,7 @@ const CheckPasswordPage = () => {
     e.preventDefault()
     e.stopPropagation()
 
-    const URL = `http://localhost:8080/api/password`
+    const URL = `https://chat-app-main-2-copy-kpg8.onrender.com/api/password`
 
     try {
         const response = await axios({

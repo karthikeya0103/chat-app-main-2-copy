@@ -28,7 +28,7 @@ const CheckEmailPage = () => {
     e.stopPropagation()
 
     const URL = `https://chat-app-main-2-copy-kpg8.onrender.com/api/email`
-    console.log(process.env.REACT_APP_BACKEND_URL)
+    console.log('https://chat-app-main-2-copy-kpg8.onrender.com')
 
     try {
         const response = await axios.post(URL,data)

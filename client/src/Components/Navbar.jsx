@@ -16,7 +16,7 @@ const Navbar = () => {
 
   axios.defaults.withCredentials = true;
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_BACKEND_URL}/id`)
+    axios.get(`https://chat-app-main-2-copy-kpg8.onrender.com/id`)
       .then(result => {
         if (result.data.valid) {
           setAuth(true);
@@ -30,7 +30,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     console.log('result');
-    axios.get(`${process.env.REACT_APP_BACKEND_URL}/remove-id`)
+    axios.get(`https://chat-app-main-2-copy-kpg8.onrender.com/remove-id`)
       .then(result => {
         console.log(result);
         window.location.reload();
